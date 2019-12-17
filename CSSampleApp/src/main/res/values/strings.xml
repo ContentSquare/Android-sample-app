@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">Android Sample app</string>
     <string name="action_settings">Settings</string>
+    <string name="main_screen_title1">Track Screens</string>
+    <string name="label_activity">Activity</string>
+    <string name="label_fragment">Fragment</string>
+    <string name="label_popup">Popup</string>
+    <string name="first_fragment">First Fragment</string>
+    <string name="second_fragment">Second Fragment</string>
+    <string name="third_fragment">Third Fragment</string>
+    <string name="text_simple_activity">Simple Activity</string>
 </resources>
