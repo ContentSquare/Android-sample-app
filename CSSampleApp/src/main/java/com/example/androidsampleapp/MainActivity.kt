@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import com.contentsquare.android.api.Currencies
 import com.example.androidsampleapp.analytics.Analytics
 import com.example.androidsampleapp.fragment.MainFragmentActivity
 import kotlinx.android.synthetic.main.activity_main.*
@@ -68,5 +69,14 @@ class MainActivity : AppCompatActivity() {
         dialog.show()
         Analytics.tagScreen("ActivityDialog_DialogShow")
     }
-    
+
+    fun pushTransaction(view: View) {
+        val amount = (244.33).toFloat()
+        val currency = Currencies.EUR
+        val id = "1233455"
+        Analytics.pushTransaction(amount, currency, id)
+        Toast.makeText(applicationContext, "Transaction id $id is being tracked", Toast
+                .LENGTH_SHORT).show()
+    }
+
 }
