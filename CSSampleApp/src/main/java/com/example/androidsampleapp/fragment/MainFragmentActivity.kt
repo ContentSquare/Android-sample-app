@@ -11,8 +11,9 @@ import com.google.android.material.tabs.TabLayoutMediator
 
 class MainFragmentActivity : AppCompatActivity() {
 
-    lateinit var viewPager: ViewPager2
+    private lateinit var viewPager: ViewPager2
     lateinit var pagerAdapter: ViewPagerAdapter
+    private lateinit var viewPager2Callback: ViewPager2.OnPageChangeCallback
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,15 +22,16 @@ class MainFragmentActivity : AppCompatActivity() {
         viewPager = findViewById(R.id.viewPager2)
 
         pagerAdapter = ViewPagerAdapter(this)
-        pagerAdapter.addFragment(FirstFragment(), "First Tab")
-        pagerAdapter.addFragment(SecondFragment(), "Second Tab")
-        pagerAdapter.addFragment(ThirdFragment(), "Third Tab")
+        pagerAdapter.addFragment(FragmentTab(getString(R.string.first_fragment)), "First Tab")
+        pagerAdapter.addFragment(FragmentTab(getString(R.string.second_fragment)), "Second Tab")
+        pagerAdapter.addFragment(FragmentTab(getString(R.string.third_fragment)), "Third Tab")
 
         viewPager.apply {
             adapter = pagerAdapter
             orientation = ViewPager2.ORIENTATION_HORIZONTAL
         }
-        TabLayoutMediator(tabs, viewPager, true) { tab, position ->
+
+        TabLayoutMediator(tabs, viewPager) { tab, position ->
             tab.text = pagerAdapter.getPageTitle(position)
             viewPager.setCurrentItem(tab.position, true)
         }.attach()
@@ -37,23 +39,18 @@ class MainFragmentActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        viewPager.registerOnPageChangeCallback(onPageChangeListener)
-        Analytics.tagScreen("Main-Fragment-Activity")
-    }
-
-    private val onPageChangeListener = object : ViewPager2.OnPageChangeCallback() {
-        override fun onPageScrollStateChanged(state: Int) {
-            //NO-OP
-        }
-
-        override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
-            //NO-OP
-        }
-
-        override fun onPageSelected(position: Int) {
-            viewPager.adapter?.run {
+        viewPager2Callback = object : ViewPager2.OnPageChangeCallback() {
+            override fun onPageSelected(position: Int) {
+                super.onPageSelected(position)
                 Analytics.tagScreen(pagerAdapter.getPageTitle(position).toString())
             }
         }
+        viewPager.registerOnPageChangeCallback(viewPager2Callback)
+        Analytics.tagScreen("Main-Fragment-Activity")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        viewPager.unregisterOnPageChangeCallback(viewPager2Callback)
     }
 }

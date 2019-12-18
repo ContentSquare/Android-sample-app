@@ -40,33 +40,33 @@ class MainActivity : AppCompatActivity() {
         builder.setTitle("App Bar color")
         builder.setMessage("Set the App bar color to RED?")
 
-        // Display Positive button
-        builder.setPositiveButton("YES") { dialog, which ->
+        builder.setPositiveButton("YES") { _, _ ->
             Toast.makeText(applicationContext, "Ok, we changed the App bar color.", Toast
                     .LENGTH_SHORT).show()
             toolbar.setBackgroundColor(Color.RED)
-            Analytics.tagScreen("ActivityDialog_DialogYES")
         }
 
-        // Display Negative button
-        builder.setNegativeButton("No") { dialog, which ->
+        builder.setNegativeButton("No") { _, _ ->
             Toast.makeText(applicationContext, "Ok, back to its original color.", Toast
                     .LENGTH_SHORT)
                     .show()
             toolbar.setBackgroundColor(ContextCompat.getColor(applicationContext,
                     R.color.colorPrimary))
-            Analytics.tagScreen("ActivityDialog_DialogNO")
         }
 
-        // Display Neutral button
         builder.setNeutralButton("Cancel") { _, _ ->
             Toast.makeText(applicationContext, "You cancelled the dialog.", Toast.LENGTH_SHORT).show()
-            Analytics.tagScreen("ActivityDialog_DialogCancel")
+        }
+
+        builder.setOnDismissListener {
+            //After the Popup is dismissed. The base activity lifecycle remains the same, Therefore
+            // we need to manually generate an activity ScreenView for the base Activity.
+            Analytics.tagScreen("Main-Activity")
         }
 
         val dialog: AlertDialog = builder.create()
         dialog.show()
         Analytics.tagScreen("ActivityDialog_DialogShow")
     }
-
+    
 }
