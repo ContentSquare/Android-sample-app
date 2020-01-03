@@ -2,12 +2,21 @@
     <string name="app_name">Android Sample app</string>
     <string name="main_screen_title1">Track Screens</string>
     <string name="main_screen_title2">Track Transactions</string>
+    <string name="main_screen_title3">GDPR</string>
     <string name="label_transaction">Transaction</string>
     <string name="label_activity">Activity</string>
     <string name="label_fragment">Fragment</string>
     <string name="label_popup">Popup</string>
+    <string name="label_privacy">Privacy Options</string>
     <string name="first_fragment">First Fragment</string>
     <string name="second_fragment">Second Fragment</string>
     <string name="third_fragment">Third Fragment</string>
     <string name="text_simple_activity">Simple Activity</string>
+    <string name="opt_in_label">Opt-In</string>
+    <string name="opt_out_label">Opt-Out</string>
+    <string name="forget_me_label">Forget Me</string>
+    <string name="stop_tracking_label">Stop Tracking</string>
+    <string name="resume_tracking_label">Resume Tracking</string>
+    <string name="privacy_option">Privacy options</string>
+    <string name="userId_refreshed">UserId refreshed</string>
 </resources>

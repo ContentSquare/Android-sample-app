@@ -1,5 +1,6 @@
 package com.example.androidsampleapp.analytics
 
+import android.content.Context
 import android.util.Log
 import com.contentsquare.android.ContentSquare
 import com.contentsquare.android.api.model.Transaction
@@ -18,4 +19,27 @@ object Analytics {
         Log.i(TAG, "Transaction: $amount - ID: $id")
     }
 
+    fun stopTracking() {
+        ContentSquare.stopTracking()
+    }
+
+    fun resumeTracking() {
+        ContentSquare.resumeTracking()
+    }
+
+    fun forgetMe() {
+        ContentSquare.forgetMe()
+    }
+
+    fun optIn(context: Context) {
+        ContentSquare.optIn(context)
+    }
+
+    fun optOut(context: Context) {
+        ContentSquare.optOut(context)
+    }
+
+    fun provideUserId(): String {
+        return ContentSquare.getUserId()
+    }
 }

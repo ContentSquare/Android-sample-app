@@ -36,6 +36,11 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
+    fun openPrivacyOptions(view: View){
+        val intent = Intent(this, GdprActivity::class.java)
+        startActivity(intent)
+    }
+
     fun openPopUp(view: View) {
         val builder = AlertDialog.Builder(this)
         builder.setTitle("App Bar color")
