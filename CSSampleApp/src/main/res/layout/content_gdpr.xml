@@ -1,94 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="16dp"
-        android:gravity="center"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-    <TextView
-            android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintlayout"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal|top"
-            android:layout_marginBottom="24dp"
-            android:text="@string/privacy_option"
-            android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+            android:layout_margin="24dp"
+            android:paddingBottom="108dp"
+            android:gravity="center">
 
-    <TextView
-            android:id="@+id/userid_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:text="Your userId is -" />
+        <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="108dp"
+                android:layout_marginBottom="24dp"
+                android:text="@string/privacy_option"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                app:layout_constraintBottom_toTopOf="@+id/userid_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageButton
-            android:id="@+id/userid_refresh_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:onClick="refreshUserIdString"
-            app:srcCompat="@android:drawable/stat_notify_sync" />
+        <TextView
+                android:id="@+id/userid_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:text="@string/user_id_text"
+                app:layout_constraintBottom_toTopOf="@+id/userid_refresh_button"
+                app:layout_constraintEnd_toEndOf="@+id/textView"
+                app:layout_constraintStart_toStartOf="@+id/textView"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-    <GridLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="54dp"
-            android:layout_marginBottom="120dp"
-            android:columnCount="2"
-            android:rowCount="3">
+        <ImageButton
+                android:id="@+id/userid_refresh_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/refresh_button"
+                android:layout_marginTop="24dp"
+                android:onClick="refreshUserIdString"
+                app:layout_constraintEnd_toEndOf="@+id/userid_text"
+                app:layout_constraintStart_toStartOf="@+id/userid_text"
+                app:layout_constraintTop_toBottomOf="@+id/userid_text"
+                app:srcCompat="@android:drawable/stat_notify_sync"
+                tools:layout_editor_absoluteY="194dp" />
+
 
         <Button
                 android:id="@+id/optin_button"
                 android:layout_width="160dp"
-                android:layout_height="60dp"
-                android:layout_row="0"
-                android:layout_column="0"
-                android:layout_gravity="fill_horizontal"
+                android:layout_height="wrap_content"
                 android:onClick="optIn"
-                android:text="@string/opt_in_label" />
+                android:text="@string/opt_in_label"
+                android:layout_marginTop="36dp"
+                app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                app:layout_constraintTop_toBottomOf="@+id/userid_refresh_button" />
 
         <Button
                 android:id="@+id/optout_button"
                 android:layout_width="160dp"
-                android:layout_height="60dp"
-                android:layout_row="0"
-                android:layout_column="1"
-                android:layout_gravity="fill_horizontal"
+                android:layout_height="wrap_content"
                 android:onClick="optOut"
-                android:text="@string/opt_out_label" />
+                android:text="@string/opt_out_label"
+                android:layout_marginTop="36dp"
+                app:layout_constraintStart_toStartOf="@+id/guideline2"
+                app:layout_constraintTop_toBottomOf="@+id/userid_refresh_button" />
 
         <Button
                 android:id="@+id/forgetme_button"
-                android:layout_width="wrap_content"
-                android:layout_height="60dp"
-                android:layout_row="1"
-                android:layout_column="0"
-                android:layout_columnSpan="2"
-                android:layout_gravity="fill_horizontal"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
                 android:onClick="forgetMe"
-                android:text="@string/forget_me_label" />
+                android:text="@string/forget_me_label"
+                app:layout_constraintEnd_toEndOf="@+id/guideline2"
+                app:layout_constraintStart_toStartOf="@+id/guideline2"
+                app:layout_constraintTop_toBottomOf="@+id/optin_button" />
 
         <Button
                 android:id="@+id/stop_tracking_button"
-                android:layout_width="wrap_content"
-                android:layout_height="60dp"
-                android:layout_row="2"
-                android:layout_column="0"
-                android:layout_gravity="fill_horizontal"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
                 android:onClick="stopTracking"
-                android:text="@string/stop_tracking_label" />
+                android:text="@string/stop_tracking_label"
+                app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                app:layout_constraintTop_toBottomOf="@+id/forgetme_button" />
 
         <Button
                 android:id="@+id/resume_tracking_button"
-                android:layout_width="wrap_content"
-                android:layout_height="60dp"
-                android:layout_row="2"
-                android:layout_column="1"
-                android:layout_gravity="fill_horizontal"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
                 android:onClick="resumeTracking"
-                android:text="@string/resume_tracking_label" />
-    </GridLayout>
+                android:text="@string/resume_tracking_label"
+                app:layout_constraintStart_toStartOf="@+id/guideline2"
+                app:layout_constraintTop_toBottomOf="@+id/forgetme_button" />
 
-</LinearLayout>
+        <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintGuide_percent="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
+

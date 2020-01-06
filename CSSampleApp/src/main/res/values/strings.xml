@@ -19,4 +19,6 @@
     <string name="resume_tracking_label">Resume Tracking</string>
     <string name="privacy_option">Privacy options</string>
     <string name="userId_refreshed">UserId refreshed</string>
+    <string name="refresh_button">Refresh</string>
+    <string name="user_id_text">"Your userId is -"</string>
 </resources>
