@@ -27,18 +27,19 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun openActivity(view: View) {
-        val intent = Intent(this, SimpleActivity::class.java)
-        startActivity(intent)
+        startActivity(Intent(this, SimpleActivity::class.java))
     }
 
     fun openFragment(view: View) {
-        val intent = Intent(this, MainFragmentActivity::class.java)
-        startActivity(intent)
+        startActivity(Intent(this, MainFragmentActivity::class.java))
     }
 
-    fun openPrivacyOptions(view: View){
-        val intent = Intent(this, GdprActivity::class.java)
-        startActivity(intent)
+    fun openPrivacyOptions(view: View) {
+        startActivity(Intent(this, GdprActivity::class.java))
+    }
+
+    fun openDynamicVariables(view: View) {
+        startActivity(Intent(this, DynamicVariablesActivity::class.java))
     }
 
     fun openPopUp(view: View) {

@@ -8,6 +8,7 @@
     <string name="label_fragment">Fragment</string>
     <string name="label_popup">Popup</string>
     <string name="label_privacy">Privacy Options</string>
+    <string name="label_dynamic_variables">Dynamic Variables</string>
     <string name="first_fragment">First Fragment</string>
     <string name="second_fragment">Second Fragment</string>
     <string name="third_fragment">Third Fragment</string>
@@ -21,4 +22,15 @@
     <string name="userId_refreshed">UserId refreshed</string>
     <string name="refresh_button">Refresh</string>
     <string name="user_id_text">"Your userId is -"</string>
+    <!-- DynamicVariablesActivity -->
+    <string name="label_send_numeric_value">Send numeric value</string>
+    <string name="text_key">text key</string>
+    <string name="key">key</string>
+    <string name="text_value">text value</string>
+    <string name="value">value</string>
+    <string name="label_send_text_value">Send text value</string>
+    <string name="numeric_key">Numeric key</string>
+    <string name="send">send</string>
+    <string name="numeric_value">Numeric value</string>
+    <string name="numeric_default_value">123</string>
 </resources>

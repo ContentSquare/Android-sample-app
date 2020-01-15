@@ -3,6 +3,7 @@ package com.example.androidsampleapp.analytics
 import android.content.Context
 import android.util.Log
 import com.contentsquare.android.ContentSquare
+import com.contentsquare.android.api.model.DynamicVar
 import com.contentsquare.android.api.model.Transaction
 
 object Analytics {
@@ -41,5 +42,13 @@ object Analytics {
 
     fun provideUserId(): String {
         return ContentSquare.getUserId()
+    }
+
+    fun send(key: String, value: String) {
+        ContentSquare.send(DynamicVar(key, value))
+    }
+
+    fun send(key: String, value: Long) {
+        ContentSquare.send(DynamicVar(key, value))
     }
 }
