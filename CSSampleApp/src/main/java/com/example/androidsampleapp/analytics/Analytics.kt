@@ -45,10 +45,10 @@ object Analytics {
     }
 
     fun send(key: String, value: String) {
-        ContentSquare.send(DynamicVar(key, value))
+        ContentSquare.send(key, value)
     }
 
     fun send(key: String, value: Long) {
-        ContentSquare.send(DynamicVar(key, value))
+        ContentSquare.send(key, value)
     }
 }
