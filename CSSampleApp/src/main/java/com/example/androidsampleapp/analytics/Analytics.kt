@@ -2,8 +2,7 @@ package com.example.androidsampleapp.analytics
 
 import android.content.Context
 import android.util.Log
-import com.contentsquare.android.ContentSquare
-import com.contentsquare.android.api.model.DynamicVar
+import com.contentsquare.android.Contentsquare
 import com.contentsquare.android.api.model.Transaction
 
 object Analytics {
@@ -12,43 +11,43 @@ object Analytics {
 
     fun tagScreen(screenName: String) {
         Log.i(TAG, "Screen: $screenName")
-        ContentSquare.send(screenName)
+        Contentsquare.send(screenName)
     }
 
     fun pushTransaction(amount: Float, currency: Int, id: String) {
-        ContentSquare.send(Transaction.builder(amount, currency).id(id).build())
+        Contentsquare.send(Transaction.builder(amount, currency).id(id).build())
         Log.i(TAG, "Transaction: $amount - ID: $id")
     }
 
     fun stopTracking() {
-        ContentSquare.stopTracking()
+        Contentsquare.stopTracking()
     }
 
     fun resumeTracking() {
-        ContentSquare.resumeTracking()
+        Contentsquare.resumeTracking()
     }
 
     fun forgetMe() {
-        ContentSquare.forgetMe()
+        Contentsquare.forgetMe()
     }
 
     fun optIn(context: Context) {
-        ContentSquare.optIn(context)
+        Contentsquare.optIn(context)
     }
 
     fun optOut(context: Context) {
-        ContentSquare.optOut(context)
+        Contentsquare.optOut(context)
     }
 
     fun provideUserId(): String {
-        return ContentSquare.getUserId()
+        return Contentsquare.getUserId()
     }
 
     fun send(key: String, value: String) {
-        ContentSquare.send(key, value)
+        Contentsquare.send(key, value)
     }
 
     fun send(key: String, value: Long) {
-        ContentSquare.send(key, value)
+        Contentsquare.send(key, value)
     }
 }

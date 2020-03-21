@@ -41,7 +41,7 @@ class GdprActivity : AppCompatActivity() {
     }
 
     fun refreshUserIdString(view: View) {
-        userid_text.text = "Your userId is: ${Analytics.provideUserId()}"
+        userid_text.text = String.format("Your userId is: %s", Analytics.provideUserId())
         Toast.makeText(applicationContext, "UserId refreshed", Toast.LENGTH_SHORT).show()
     }
 }
