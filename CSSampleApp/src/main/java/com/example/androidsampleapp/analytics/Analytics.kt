@@ -19,6 +19,11 @@ object Analytics {
         Log.i(TAG, "Transaction: $amount - ID: $id")
     }
 
+    fun pushTransaction(amount: Float, currency: String, id: String){
+        Contentsquare.send(Transaction.builder(amount, currency).id(id).build())
+        Log.i(TAG, "Transaction: $amount $currency - ID: $id")
+    }
+
     fun stopTracking() {
         Contentsquare.stopTracking()
     }

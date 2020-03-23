@@ -77,12 +77,21 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun pushTransaction(view: View) {
-        val amount = (244.33).toFloat()
+        val amount = 244.33f
         val currency = Currencies.EUR
         val id = "1233455"
         Analytics.pushTransaction(amount, currency, id)
         Toast.makeText(applicationContext, "Transaction id $id is being tracked", Toast
                 .LENGTH_SHORT).show()
+    }
+
+    fun pushTransactionString(view: View) {
+        val amount = 234.33f
+        val currencyString = "USD"
+        val transactionId = "1111"
+        Analytics.pushTransaction(amount, currencyString, transactionId)
+        Toast.makeText(applicationContext, "Transaction id $transactionId is being tracked", Toast
+            .LENGTH_SHORT).show()
     }
 
 }

@@ -3,7 +3,8 @@
     <string name="main_screen_title1">Track Screens</string>
     <string name="main_screen_title2">Track Transactions</string>
     <string name="main_screen_title3">GDPR</string>
-    <string name="label_transaction">Transaction</string>
+    <string name="label_transaction_int_currency">Transaction</string>
+    <string name="label_transaction_string_currency">Transaction (Currency as String)</string>
     <string name="label_activity">Activity</string>
     <string name="label_fragment">Fragment</string>
     <string name="label_popup">Popup</string>
