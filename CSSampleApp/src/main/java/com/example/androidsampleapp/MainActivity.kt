@@ -10,15 +10,18 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.contentsquare.android.api.Currencies
 import com.example.androidsampleapp.analytics.Analytics
+import com.example.androidsampleapp.databinding.ActivityMainBinding
 import com.example.androidsampleapp.fragment.MainFragmentActivity
-import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        setSupportActionBar(toolbar)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        setSupportActionBar(binding.toolbar)
     }
 
     override fun onResume() {
@@ -48,21 +51,30 @@ class MainActivity : AppCompatActivity() {
         builder.setMessage("Set the App bar color to RED?")
 
         builder.setPositiveButton("YES") { _, _ ->
-            Toast.makeText(applicationContext, "Ok, we changed the App bar color.", Toast
-                    .LENGTH_SHORT).show()
-            toolbar.setBackgroundColor(Color.RED)
+            Toast.makeText(
+                applicationContext, "Ok, we changed the App bar color.", Toast
+                    .LENGTH_SHORT
+            ).show()
+            binding.toolbar.setBackgroundColor(Color.RED)
         }
 
         builder.setNegativeButton("No") { _, _ ->
-            Toast.makeText(applicationContext, "Ok, back to its original color.", Toast
-                    .LENGTH_SHORT)
-                    .show()
-            toolbar.setBackgroundColor(ContextCompat.getColor(applicationContext,
-                    R.color.colorPrimary))
+            Toast.makeText(
+                applicationContext, "Ok, back to its original color.", Toast
+                    .LENGTH_SHORT
+            )
+                .show()
+            binding.toolbar.setBackgroundColor(
+                ContextCompat.getColor(
+                    applicationContext,
+                    R.color.colorPrimary
+                )
+            )
         }
 
         builder.setNeutralButton("Cancel") { _, _ ->
-            Toast.makeText(applicationContext, "You cancelled the dialog.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(applicationContext, "You cancelled the dialog.", Toast.LENGTH_SHORT)
+                .show()
         }
 
         builder.setOnDismissListener {
@@ -81,8 +93,10 @@ class MainActivity : AppCompatActivity() {
         val currency = Currencies.EUR
         val id = "1233455"
         Analytics.pushTransaction(amount, currency, id)
-        Toast.makeText(applicationContext, "Transaction id $id is being tracked", Toast
-                .LENGTH_SHORT).show()
+        Toast.makeText(
+            applicationContext, "Transaction id $id is being tracked", Toast
+                .LENGTH_SHORT
+        ).show()
     }
 
     fun pushTransactionString(view: View) {
@@ -90,8 +104,9 @@ class MainActivity : AppCompatActivity() {
         val currencyString = "USD"
         val transactionId = "1111"
         Analytics.pushTransaction(amount, currencyString, transactionId)
-        Toast.makeText(applicationContext, "Transaction id $transactionId is being tracked", Toast
-            .LENGTH_SHORT).show()
+        Toast.makeText(
+            applicationContext, "Transaction id $transactionId is being tracked", Toast
+                .LENGTH_SHORT
+        ).show()
     }
-
 }
