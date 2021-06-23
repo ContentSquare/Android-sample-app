@@ -1,8 +1,8 @@
 package com.example.androidsampleapp
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.DataBindingUtil
 import com.example.androidsampleapp.analytics.Analytics
 import com.example.androidsampleapp.databinding.ActivityDynamicVariablesBinding
 
@@ -13,15 +13,15 @@ class DynamicVariablesActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_dynamic_variables)
-        binding.activity = this
+        binding = ActivityDynamicVariablesBinding.inflate(layoutInflater)
+        setContentView(binding.root)
     }
 
-    fun onSendText() {
+    fun onSendText(view: View) {
         Analytics.send(binding.textKey.text.toString(), binding.textValue.text.toString())
     }
 
-    fun onSendNumber() {
+    fun onSendNumber(view: View) {
         Analytics.send(
             binding.numericKey.text.toString(),
             binding.numericValue.text.toString().toLong()
