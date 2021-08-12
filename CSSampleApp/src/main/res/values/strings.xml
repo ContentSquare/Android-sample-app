@@ -34,4 +34,5 @@
     <string name="send">send</string>
     <string name="numeric_value">Numeric value</string>
     <string name="numeric_default_value">123</string>
+    <string name="variables">Variables</string>
 </resources>
