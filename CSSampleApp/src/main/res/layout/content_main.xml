@@ -22,78 +22,97 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-                android:id="@+id/label_activity"
-                style="@style/ListText"
-                android:onClick="openActivity"
-                android:text="@string/label_activity"
-                app:layout_constraintStart_toStartOf="@+id/title_screen_tracking"
-                app:layout_constraintTop_toBottomOf="@+id/title_screen_tracking" />
+            android:id="@+id/label_activity"
+            style="@style/ListText"
+            android:layout_marginStart="32dp"
+            android:onClick="openActivity"
+            android:text="@string/label_activity"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title_screen_tracking" />
 
         <TextView
-                android:id="@+id/label_fragment"
-                style="@style/ListText"
-                android:onClick="openFragment"
-                android:text="@string/label_fragment"
-                app:layout_constraintStart_toStartOf="@+id/label_activity"
-                app:layout_constraintTop_toBottomOf="@+id/label_activity" />
+            android:id="@+id/label_fragment"
+            style="@style/ListText"
+            android:layout_marginStart="32dp"
+            android:onClick="openFragment"
+            android:text="@string/label_fragment"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_activity" />
 
         <TextView
-                android:id="@+id/label_popup"
-                style="@style/ListText"
-                android:onClick="openPopUp"
-                android:text="@string/label_popup"
-                app:layout_constraintStart_toStartOf="@+id/label_fragment"
-                app:layout_constraintTop_toBottomOf="@+id/label_fragment" />
+            android:id="@+id/label_popup"
+            style="@style/ListText"
+            android:layout_marginStart="32dp"
+            android:onClick="openPopUp"
+            android:text="@string/label_popup"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_fragment" />
 
         <TextView
-                android:id="@+id/title_transaction"
-                style="@style/TitleText"
-                android:layout_marginTop="24dp"
-                android:text="@string/main_screen_title2"
-                app:layout_constraintStart_toStartOf="@+id/label_popup"
-                app:layout_constraintTop_toBottomOf="@+id/label_popup" />
+            android:id="@+id/title_transaction"
+            style="@style/TitleText"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/main_screen_title2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_popup" />
 
         <TextView
-                android:id="@+id/label_transaction_int_currency"
-                style="@style/ListText"
-                android:onClick="pushTransaction"
-                android:text="@string/label_transaction_int_currency"
-                app:layout_constraintStart_toStartOf="@+id/title_transaction"
-                app:layout_constraintTop_toBottomOf="@+id/title_transaction" />
+            android:id="@+id/label_transaction_int_currency"
+            style="@style/ListText"
+            android:layout_marginStart="32dp"
+            android:onClick="pushTransaction"
+            android:text="@string/label_transaction_int_currency"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title_transaction" />
 
         <TextView
-                android:id="@+id/label_transaction_string_currency"
-                style="@style/ListText"
-                android:onClick="pushTransactionString"
-                android:text="@string/label_transaction_string_currency"
-                app:layout_constraintStart_toStartOf="@+id/label_transaction_int_currency"
-                app:layout_constraintTop_toBottomOf="@+id/label_transaction_int_currency" />
+            android:id="@+id/label_transaction_string_currency"
+            style="@style/ListText"
+            android:layout_marginStart="32dp"
+            android:onClick="pushTransactionString"
+            android:text="@string/label_transaction_string_currency"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_transaction_int_currency" />
 
         <TextView
-                android:id="@+id/title_gdpr"
-                style="@style/TitleText"
-                android:layout_marginTop="24dp"
-                android:text="@string/main_screen_title3"
-                app:layout_constraintStart_toStartOf="@+id/title_transaction"
-                app:layout_constraintTop_toBottomOf="@+id/label_transaction_string_currency" />
+            android:id="@+id/title_dynamic_variables"
+            style="@style/TitleText"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/variables"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_transaction_string_currency" />
 
         <TextView
-                android:id="@+id/label_privacy"
-                style="@style/ListText"
-                android:onClick="openPrivacyOptions"
-                android:text="@string/label_privacy"
-                app:layout_constraintStart_toStartOf="@+id/title_gdpr"
-                app:layout_constraintTop_toBottomOf="@+id/title_gdpr" />
+            android:id="@+id/label_dynamic_variables"
+            style="@style/ListText"
+            android:layout_marginStart="32dp"
+            android:onClick="openDynamicVariables"
+            android:text="@string/label_dynamic_variables"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title_dynamic_variables" />
 
         <TextView
-                android:id="@+id/label_dynamic_variables"
-                style="@style/ListText"
-                android:layout_marginBottom="24dp"
-                android:onClick="openDynamicVariables"
-                android:text="@string/label_dynamic_variables"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/label_privacy"
-                app:layout_constraintTop_toBottomOf="@+id/label_privacy" />
+            android:id="@+id/title_gdpr"
+            style="@style/TitleText"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/main_screen_title3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_dynamic_variables" />
+
+        <TextView
+            android:id="@+id/label_privacy"
+            style="@style/ListText"
+            android:layout_marginStart="32dp"
+            android:layout_marginBottom="24dp"
+            android:onClick="openPrivacyOptions"
+            android:text="@string/label_privacy"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title_gdpr" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
