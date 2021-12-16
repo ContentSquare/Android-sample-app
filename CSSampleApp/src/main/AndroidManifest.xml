@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.androidsampleapp">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <!-- android:usesCleartextTraffic="true" used for integration test purpose -->
     <application
         android:allowBackup="true"
