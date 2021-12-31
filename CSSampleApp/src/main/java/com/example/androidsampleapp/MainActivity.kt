@@ -2,6 +2,7 @@ package com.example.androidsampleapp
 
 import android.content.Intent
 import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
@@ -21,7 +22,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        setSupportActionBar(binding.toolbar)
     }
 
     override fun onResume() {
@@ -55,7 +55,7 @@ class MainActivity : AppCompatActivity() {
                 applicationContext, "Ok, we changed the App bar color.", Toast
                     .LENGTH_SHORT
             ).show()
-            binding.toolbar.setBackgroundColor(Color.RED)
+            supportActionBar?.setBackgroundDrawable(ColorDrawable(Color.RED))
         }
 
         builder.setNegativeButton("No") { _, _ ->
@@ -64,10 +64,10 @@ class MainActivity : AppCompatActivity() {
                     .LENGTH_SHORT
             )
                 .show()
-            binding.toolbar.setBackgroundColor(
-                ContextCompat.getColor(
+            supportActionBar?.setBackgroundDrawable(
+                ContextCompat.getDrawable(
                     applicationContext,
-                    R.color.colorPrimary
+                    R.color.purple_500
                 )
             )
         }
