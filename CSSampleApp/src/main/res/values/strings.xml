@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Android Sample app</string>
+    <string name="app_name">CS Android Sample app</string>
     <string name="main_screen_title1">Track Screens</string>
     <string name="main_screen_title2">Track Transactions</string>
     <string name="main_screen_title3">GDPR</string>
