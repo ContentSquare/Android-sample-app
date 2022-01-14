@@ -3,8 +3,6 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        // will be removed after the update of SampleApp with CS SDK 4.7.0
-        jcenter()
     }
 }
 rootProject.name='Sample'
