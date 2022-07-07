@@ -28,7 +28,7 @@
 
         <TextView
                 android:id="@+id/userid_text"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
                 android:text="@string/user_id_text"
@@ -52,52 +52,66 @@
 
 
         <Button
-                android:id="@+id/optin_button"
-                android:layout_width="160dp"
-                android:layout_height="wrap_content"
-                android:onClick="optIn"
-                android:text="@string/opt_in_label"
-                android:layout_marginTop="36dp"
-                app:layout_constraintEnd_toStartOf="@+id/guideline2"
-                app:layout_constraintTop_toBottomOf="@+id/userid_refresh_button" />
+            android:id="@+id/optin_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="36dp"
+            android:layout_marginEnd="8dp"
+            android:onClick="optIn"
+            android:text="@string/opt_in_label"
+            app:layout_constraintEnd_toStartOf="@+id/guideline2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/userid_refresh_button" />
 
         <Button
-                android:id="@+id/optout_button"
-                android:layout_width="160dp"
-                android:layout_height="wrap_content"
-                android:onClick="optOut"
-                android:text="@string/opt_out_label"
-                android:layout_marginTop="36dp"
-                app:layout_constraintStart_toStartOf="@+id/guideline2"
-                app:layout_constraintTop_toBottomOf="@+id/userid_refresh_button" />
+            android:id="@+id/optout_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="36dp"
+            android:layout_marginEnd="16dp"
+            android:onClick="optOut"
+            android:text="@string/opt_out_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
+            app:layout_constraintTop_toBottomOf="@+id/userid_refresh_button" />
 
         <Button
-                android:id="@+id/forgetme_button"
-                android:layout_width="320dp"
-                android:layout_height="wrap_content"
-                android:onClick="forgetMe"
-                android:text="@string/forget_me_label"
-                app:layout_constraintEnd_toEndOf="@+id/guideline2"
-                app:layout_constraintStart_toStartOf="@+id/guideline2"
-                app:layout_constraintTop_toBottomOf="@+id/optin_button" />
+            android:id="@+id/forgetme_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:onClick="forgetMe"
+            android:text="@string/forget_me_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/optin_button" />
 
         <Button
-                android:id="@+id/stop_tracking_button"
-                android:layout_width="160dp"
-                android:layout_height="wrap_content"
-                android:onClick="stopTracking"
-                android:text="@string/stop_tracking_label"
-                app:layout_constraintEnd_toStartOf="@+id/guideline2"
-                app:layout_constraintTop_toBottomOf="@+id/forgetme_button" />
+            android:id="@+id/stop_tracking_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="8dp"
+            android:onClick="stopTracking"
+            android:text="@string/stop_tracking_label"
+            app:layout_constraintEnd_toStartOf="@+id/guideline2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/forgetme_button" />
 
         <Button
-                android:id="@+id/resume_tracking_button"
-                android:layout_width="160dp"
-                android:layout_height="wrap_content"
-                android:onClick="resumeTracking"
-                android:text="@string/resume_tracking_label"
-                app:layout_constraintStart_toStartOf="@+id/guideline2"
-                app:layout_constraintTop_toBottomOf="@+id/forgetme_button" />
+            android:id="@+id/resume_tracking_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
+            android:onClick="resumeTracking"
+            android:text="@string/resume_tracking_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
+            app:layout_constraintTop_toBottomOf="@+id/forgetme_button" />
 
         <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideline2"
