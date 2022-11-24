@@ -1,6 +1,9 @@
 package com.example.androidsampleapp.network
 
 import com.example.androidsampleapp.network.NetworkAnalysisActivity.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import okhttp3.Request
@@ -36,7 +39,10 @@ class OkHttpIntegration : NetworkIntegration {
                     .build()
             }
         }
-
-        client.newCall(request).execute()
+        CoroutineScope(Dispatchers.IO).launch {
+            kotlin.runCatching {
+                client.newCall(request).execute()
+            }
+        }
     }
 }

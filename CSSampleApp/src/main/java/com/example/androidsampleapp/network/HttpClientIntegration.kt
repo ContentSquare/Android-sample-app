@@ -1,5 +1,8 @@
 package com.example.androidsampleapp.network
 
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import org.apache.http.HttpHost
 import org.apache.http.impl.client.AutoRetryHttpClient
 import org.apache.http.message.BasicHttpRequest
@@ -18,11 +21,15 @@ class HttpClientIntegration : NetworkIntegration {
     ) {
         val httpStatusUrl = getUrl(responseCode.toString(), delay.toString())
 
-        client.execute(
-            httpHost(httpStatusUrl),
-            BasicHttpRequest(httpMethod.toString(), httpStatusUrl),
-            BasicHttpContext()
-        )
+        CoroutineScope(Dispatchers.IO).launch {
+            kotlin.runCatching {
+                client.execute(
+                    httpHost(httpStatusUrl),
+                    BasicHttpRequest(httpMethod.toString(), httpStatusUrl),
+                    BasicHttpContext()
+                )
+            }
+        }
     }
 
     private fun httpHost(url: String): HttpHost = with(URI(url)) {
