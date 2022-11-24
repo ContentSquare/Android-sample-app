@@ -7,7 +7,6 @@ import java.net.URL
 class UrlIntegration : NetworkIntegration {
 
     override fun sendRequest(
-        url: String,
         clientCallTimeoutMs: Long,
         httpMethod: HttpMethod,
         responseCode: ResponseCode,

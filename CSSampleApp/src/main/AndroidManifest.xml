@@ -16,6 +16,10 @@
         android:theme="@style/Theme.AndroidSampleApp"
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning">
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
         <activity android:name=".DynamicVariablesActivity" />
         <activity android:name=".GdprActivity" />
         <activity android:name=".fragment.MainFragmentActivity" />

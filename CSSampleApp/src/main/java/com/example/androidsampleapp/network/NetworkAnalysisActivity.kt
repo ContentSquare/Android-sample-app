@@ -64,19 +64,9 @@ class NetworkAnalysisActivity : AppCompatActivity() {
         }
         binding.sendButton.setOnClickListener {
             getLibraryRequestBuilder().sendRequest(
-                "/",
                 httpMethod = binding.httpSpinner.selectedItem as HttpMethod,
                 responseCode = binding.responseCodeSpinner.selectedItem as ResponseCode,
                 delay = binding.delaySpinner.selectedItem as Delay
-            )
-        }
-        binding.timeoutButton.setOnClickListener {
-            getLibraryRequestBuilder().sendRequest(
-                "/",
-                clientCallTimeoutMs = 1000,
-                httpMethod = binding.httpSpinner.selectedItem as HttpMethod,
-                responseCode = binding.responseCodeSpinner.selectedItem as ResponseCode,
-                delay = Delay.DELAY_4000
             )
         }
     }
