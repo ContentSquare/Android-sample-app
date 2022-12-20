@@ -2,6 +2,7 @@ package com.example.androidsampleapp.network
 
 import android.os.Bundle
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.androidsampleapp.databinding.ActivityNetworkAnalysisBinding
 
@@ -66,8 +67,15 @@ class NetworkAnalysisActivity : AppCompatActivity() {
             getLibraryRequestBuilder().sendRequest(
                 httpMethod = binding.httpSpinner.selectedItem as HttpMethod,
                 responseCode = binding.responseCodeSpinner.selectedItem as ResponseCode,
-                delay = binding.delaySpinner.selectedItem as Delay
+                delay = binding.delaySpinner.selectedItem as Delay,
+                callback = this::displayToast
             )
+        }
+    }
+
+    private fun displayToast(result: String) {
+        runOnUiThread {
+            Toast.makeText(this, "Request result : $result", Toast.LENGTH_LONG).show()
         }
     }
 

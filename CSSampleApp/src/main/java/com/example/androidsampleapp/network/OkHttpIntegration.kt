@@ -18,7 +18,8 @@ class OkHttpIntegration : NetworkIntegration {
         clientCallTimeoutMs: Long,
         httpMethod: HttpMethod,
         responseCode: ResponseCode,
-        delay: Delay
+        delay: Delay,
+        callback: (String) -> Unit
     ) {
         client = OkHttpClient().newBuilder()
             .callTimeout(clientCallTimeoutMs, TimeUnit.MILLISECONDS)
@@ -41,7 +42,8 @@ class OkHttpIntegration : NetworkIntegration {
         }
         CoroutineScope(Dispatchers.IO).launch {
             kotlin.runCatching {
-                client.newCall(request).execute()
+                val response = client.newCall(request).execute()
+                callback(response.toString())
             }
         }
     }

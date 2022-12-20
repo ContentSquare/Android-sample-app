@@ -17,17 +17,19 @@ class HttpClientIntegration : NetworkIntegration {
         clientCallTimeoutMs: Long,
         httpMethod: NetworkAnalysisActivity.HttpMethod,
         responseCode: NetworkAnalysisActivity.ResponseCode,
-        delay: NetworkAnalysisActivity.Delay
+        delay: NetworkAnalysisActivity.Delay,
+        callback: (String) -> Unit
     ) {
         val httpStatusUrl = getUrl(responseCode.toString(), delay.toString())
 
         CoroutineScope(Dispatchers.IO).launch {
             kotlin.runCatching {
-                client.execute(
+                val response = client.execute(
                     httpHost(httpStatusUrl),
                     BasicHttpRequest(httpMethod.toString(), httpStatusUrl),
                     BasicHttpContext()
                 )
+                callback(response.statusLine.toString())
             }
         }
     }

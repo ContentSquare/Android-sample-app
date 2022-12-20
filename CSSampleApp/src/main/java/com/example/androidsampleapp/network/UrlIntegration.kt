@@ -4,6 +4,7 @@ import com.example.androidsampleapp.network.NetworkAnalysisActivity.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import java.io.BufferedReader
 import java.net.HttpURLConnection
 import java.net.URL
 
@@ -13,7 +14,8 @@ class UrlIntegration : NetworkIntegration {
         clientCallTimeoutMs: Long,
         httpMethod: HttpMethod,
         responseCode: ResponseCode,
-        delay: Delay
+        delay: Delay,
+        callback: (String) -> Unit
     ) {
         val connection =
             URL(
@@ -27,6 +29,12 @@ class UrlIntegration : NetworkIntegration {
             CoroutineScope(Dispatchers.IO).launch {
                 kotlin.runCatching {
                     connection.connect()
+                    val response: String = if (connection.responseCode in 100..399) {
+                        connection.inputStream
+                    } else {
+                        connection.errorStream
+                    }.bufferedReader().use(BufferedReader::readText)
+                    callback(response)
                 }
             }
         } finally {

@@ -5,7 +5,8 @@ interface NetworkIntegration {
         clientCallTimeoutMs: Long = 10000,
         httpMethod: NetworkAnalysisActivity.HttpMethod,
         responseCode: NetworkAnalysisActivity.ResponseCode,
-        delay: NetworkAnalysisActivity.Delay
+        delay: NetworkAnalysisActivity.Delay,
+        callback: (String) -> Unit
     )
 
     fun getUrl(responseCode: String, delay: String) =
