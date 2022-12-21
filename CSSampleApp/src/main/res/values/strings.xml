@@ -3,13 +3,22 @@
     <string name="main_screen_title1">Track Screens</string>
     <string name="main_screen_title2">Track Transactions</string>
     <string name="main_screen_title3">GDPR</string>
+    <string name="main_screen_title4">Error Analysis</string>
     <string name="label_transaction_int_currency">Transaction</string>
     <string name="label_transaction_string_currency">Transaction (Currency as String)</string>
     <string name="label_activity">Activity</string>
     <string name="label_fragment">Fragment</string>
     <string name="label_popup">Popup</string>
     <string name="label_privacy">Privacy Options</string>
+    <string name="label_network_analysis">Network Analysis</string>
+    <string name="label_http_title">HTTP Method :</string>
+    <string name="label_library_title">Library :</string>
+    <string name="label_response_title">Response code :</string>
+    <string name="label_delay_title">Delay (ms)</string>
+    <string name="label_send_button">Send</string>
+    <string name="label_timeout_button">Timeout</string>
     <string name="label_dynamic_variables">Dynamic Variables</string>
+    <string name="label_behaviour_hint"><![CDATA[Response code >= 300 will be capture as an error]]></string>
     <string name="first_fragment">First Fragment</string>
     <string name="second_fragment">Second Fragment</string>
     <string name="third_fragment">Third Fragment</string>

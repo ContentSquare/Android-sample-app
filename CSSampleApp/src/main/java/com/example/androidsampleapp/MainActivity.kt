@@ -13,6 +13,7 @@ import com.contentsquare.android.api.Currencies
 import com.example.androidsampleapp.analytics.Analytics
 import com.example.androidsampleapp.databinding.ActivityMainBinding
 import com.example.androidsampleapp.fragment.MainFragmentActivity
+import com.example.androidsampleapp.network.NetworkAnalysisActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -39,6 +40,10 @@ class MainActivity : AppCompatActivity() {
 
     fun openPrivacyOptions(view: View) {
         startActivity(Intent(this, GdprActivity::class.java))
+    }
+
+    fun openNetworkAnalysis(view: View) {
+        startActivity(Intent(this, NetworkAnalysisActivity::class.java))
     }
 
     fun openDynamicVariables(view: View) {
