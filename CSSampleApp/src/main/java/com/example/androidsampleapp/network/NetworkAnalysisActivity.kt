@@ -81,13 +81,11 @@ class NetworkAnalysisActivity : AppCompatActivity() {
 
     private fun getLibraryRequestBuilder() = when (binding.librarySpinner.selectedItem) {
         Library.OKHTTP -> OkHttpIntegration()
-        Library.HTTPCLIENT -> HttpClientIntegration()
         else -> UrlIntegration()
     }
 
     enum class Library(private val libraryName: String) {
         OKHTTP("OkHttp"),
-        HTTPCLIENT("HttpClient"),
         URL("URL");
 
         override fun toString(): String {
