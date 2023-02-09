@@ -50,6 +50,10 @@ class MainActivity : AppCompatActivity() {
         startActivity(Intent(this, DynamicVariablesActivity::class.java))
     }
 
+    fun openMaskingScenarios(view: View){
+        startActivity(Intent(this, MaskingScenariosActivity::class.java))
+    }
+
     fun openPopUp(view: View) {
         val builder = AlertDialog.Builder(this)
         builder.setTitle("App Bar color")
