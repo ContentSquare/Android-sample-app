@@ -44,4 +44,22 @@
     <string name="numeric_value">Numeric value</string>
     <string name="numeric_default_value">123</string>
     <string name="variables">Variables</string>
+    <!-- SessionReplayActivity -->
+    <string name="session_replay_title">Session Replay</string>
+    <string name="label_masking_scenarios">Masking Scenarios</string>
+    <string name="text_set_default_masking">Default masking</string>
+    <string name="text_set_default_masking_off">Turn off default masking</string>
+    <string name="text_set_default_masking_on">Turn on default masking</string>
+    <string name="text_set_masking">Masking Scenarios</string>
+    <string name="text_mask_all_text_view">Mask all TextView</string>
+    <string name="text_un_mask_all_text_view">Unmask all TextView</string>
+    <string name="text_mask_all_image_view">Mask all ImageView</string>
+    <string name="text_un_mask_all_image_view">Unmask all ImageView</string>
+    <string name="text_mask_red_image_view">Mask Red ImageView</string>
+    <string name="text_un_mask_red_image_view">Unmask Red ImageView</string>
+    <string name="label_red_image_view">Red ImageView</string>
+    <string name="label_blue_image_view">Blue ImageView</string>
+    <string name="text_one_line_text_view">One line TextView</string>
+    <string name="text_multiple_line_text_view">Multiple line TextView. Multiple line TextView. Multiple line TextView. Multiple line TextView. Multiple line TextView. Multiple line TextView. </string>
+
 </resources>

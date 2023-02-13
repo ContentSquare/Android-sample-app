@@ -21,6 +21,7 @@
             android:required="false" />
 
         <activity android:name=".DynamicVariablesActivity" />
+        <activity android:name=".MaskingScenariosActivity" />
         <activity android:name=".GdprActivity" />
         <activity android:name=".fragment.MainFragmentActivity" />
         <activity android:name=".SimpleActivity" />

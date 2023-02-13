@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:ignore="UsingOnClickInXml, ContentDescription">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".SimpleActivity">
+
+        <TextView
+            android:id="@+id/set_default_masking_title"
+            style="@style/TitleText"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:text="@string/text_set_default_masking"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/set_default_masking_on"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:onClick="onSetDefaultMaskingOn"
+            android:text="@string/text_set_default_masking_on"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/set_default_masking_title" />
+
+        <Button
+            android:id="@+id/set_default_masking_off"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:onClick="onSetDefaultMaskingOff"
+            android:text="@string/text_set_default_masking_off"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/set_default_masking_on" />
+
+        <TextView
+            android:id="@+id/set_masking_title"
+            style="@style/TitleText"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:text="@string/text_set_masking"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/set_default_masking_off" />
+
+        <Button
+            android:id="@+id/mask_all_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:onClick="onMaskAllTextView"
+            android:text="@string/text_mask_all_text_view"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/set_masking_title" />
+
+        <Button
+            android:id="@+id/unmask_all_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:onClick="onUnmaskAllTextView"
+            android:text="@string/text_un_mask_all_text_view"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mask_all_text_view" />
+
+
+        <TextView
+            android:id="@+id/one_line_text"
+            style="@style/ListText"
+            android:layout_marginStart="32dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/text_one_line_text_view"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/unmask_all_text_view" />
+
+        <TextView
+            android:id="@+id/multiple_line_text"
+            style="@style/ListText"
+            android:layout_width="0dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/text_multiple_line_text_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/one_line_text" />
+
+        <Button
+            android:id="@+id/mask_all_image_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:onClick="onMaskAllImageView"
+            android:text="@string/text_mask_all_image_view"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/multiple_line_text" />
+
+        <Button
+            android:id="@+id/unmask_all_image_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:onClick="onUnmaskAllImageView"
+            android:text="@string/text_un_mask_all_text_view"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mask_all_image_view" />
+
+        <Button
+            android:id="@+id/mask_red_image_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:onClick="onMaskRedImageView"
+            android:text="@string/text_mask_red_image_view"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/unmask_all_image_view" />
+
+        <Button
+            android:id="@+id/unmask_red_image_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:onClick="onUnmaskRedImageView"
+            android:text="@string/text_un_mask_red_image_view"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mask_red_image_view" />
+
+        <ImageView
+            android:id="@+id/red_image_view"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/red"
+            android:padding="16dp"
+            android:src="@drawable/contentsquare_img_cs_logo"
+            app:layout_constraintEnd_toStartOf="@id/blue_image_view"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/unmask_red_image_view"
+            app:tint="@color/white" />
+
+        <TextView
+            android:id="@+id/red_image_view_title"
+            style="@style/ListText"
+            android:layout_marginBottom="32dp"
+            android:text="@string/label_red_image_view"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/red_image_view"
+            app:layout_constraintStart_toStartOf="@id/red_image_view"
+            app:layout_constraintTop_toBottomOf="@id/red_image_view" />
+
+        <ImageView
+            android:id="@+id/blue_image_view"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:background="@color/blue"
+            android:padding="16dp"
+            android:src="@drawable/contentsquare_img_cs_logo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/red_image_view"
+            app:layout_constraintTop_toBottomOf="@id/unmask_red_image_view"
+            app:tint="@color/white" />
+
+        <TextView
+            android:id="@+id/blue_image_view_title"
+            style="@style/ListText"
+            android:layout_marginBottom="32dp"
+            android:text="@string/label_blue_image_view"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/blue_image_view"
+            app:layout_constraintStart_toStartOf="@id/blue_image_view"
+            app:layout_constraintTop_toBottomOf="@id/blue_image_view" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
