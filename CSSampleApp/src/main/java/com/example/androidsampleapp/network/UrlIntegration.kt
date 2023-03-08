@@ -1,6 +1,6 @@
 package com.example.androidsampleapp.network
 
-import com.example.androidsampleapp.network.NetworkAnalysisActivity.*
+import com.example.androidsampleapp.network.NetworkAnalysisActivity.HttpMethod
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -11,19 +11,12 @@ import java.net.URL
 class UrlIntegration : NetworkIntegration {
 
     override fun sendRequest(
+        url: String,
         clientCallTimeoutMs: Long,
         httpMethod: HttpMethod,
-        responseCode: ResponseCode,
-        delay: Delay,
         callback: (String) -> Unit
     ) {
-        val connection =
-            URL(
-                getUrl(
-                    responseCode.toString(),
-                    delay.toString()
-                )
-            ).openConnection() as HttpURLConnection
+        val connection = URL(url).openConnection() as HttpURLConnection
         connection.requestMethod = HttpMethod.GET.toString()
         try {
             CoroutineScope(Dispatchers.IO).launch {

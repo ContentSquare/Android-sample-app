@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.contentsquare.android.error.analysis.ErrorAnalysis
 import com.example.androidsampleapp.databinding.ActivityNetworkAnalysisBinding
 
 class NetworkAnalysisActivity : AppCompatActivity() {
@@ -14,10 +15,20 @@ class NetworkAnalysisActivity : AppCompatActivity() {
     private lateinit var responseCodeAdapter: ArrayAdapter<ResponseCode>
     private lateinit var delayAdapter: ArrayAdapter<Delay>
 
+    companion object {
+        const val URL = "https://httpstat.us"
+        const val EXTRA_PATH = "person/123/store/456"
+        const val EXTRA_EMAIL = "test@cs.com"
+        const val URL_MASK = "$URL/:status_code/person/:person_id/store/:store_id"
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityNetworkAnalysisBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        ErrorAnalysis.setUrlMaskingPatterns(listOf(URL_MASK))
+        binding.extraPath.text = EXTRA_PATH
 
         libraryAdapter = ArrayAdapter<Library>(
             this,
@@ -65,9 +76,8 @@ class NetworkAnalysisActivity : AppCompatActivity() {
         }
         binding.sendButton.setOnClickListener {
             getLibraryRequestBuilder().sendRequest(
+                url = getUrl(),
                 httpMethod = binding.httpSpinner.selectedItem as HttpMethod,
-                responseCode = binding.responseCodeSpinner.selectedItem as ResponseCode,
-                delay = binding.delaySpinner.selectedItem as Delay,
                 callback = this::displayToast
             )
         }
@@ -82,6 +92,15 @@ class NetworkAnalysisActivity : AppCompatActivity() {
     private fun getLibraryRequestBuilder() = when (binding.librarySpinner.selectedItem) {
         Library.OKHTTP -> OkHttpIntegration()
         else -> UrlIntegration()
+    }
+
+    private fun getUrl(): String {
+        val delay = (binding.delaySpinner.selectedItem as Delay).toString()
+        val email = if (binding.checkboxEmailUrl.isChecked) "/$EXTRA_EMAIL" else ""
+        val extraPath = if (binding.checkboxExtraPath.isChecked) "/$EXTRA_PATH" else ""
+        val responseCode = (binding.responseCodeSpinner.selectedItem as ResponseCode).toString()
+
+        return "$URL/$responseCode$extraPath$email?sleep=$delay&test=testparam"
     }
 
     enum class Library(private val libraryName: String) {
@@ -130,4 +149,3 @@ class NetworkAnalysisActivity : AppCompatActivity() {
         }
     }
 }
-

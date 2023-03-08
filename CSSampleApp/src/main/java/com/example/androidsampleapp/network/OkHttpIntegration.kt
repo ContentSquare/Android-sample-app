@@ -1,6 +1,6 @@
 package com.example.androidsampleapp.network
 
-import com.example.androidsampleapp.network.NetworkAnalysisActivity.*
+import com.example.androidsampleapp.network.NetworkAnalysisActivity.HttpMethod
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -15,10 +15,9 @@ class OkHttpIntegration : NetworkIntegration {
     private lateinit var client: OkHttpClient
 
     override fun sendRequest(
+        url: String,
         clientCallTimeoutMs: Long,
         httpMethod: HttpMethod,
-        responseCode: ResponseCode,
-        delay: Delay,
         callback: (String) -> Unit
     ) {
         client = OkHttpClient().newBuilder()
@@ -28,12 +27,12 @@ class OkHttpIntegration : NetworkIntegration {
         val request: Request = when (httpMethod) {
             HttpMethod.GET -> {
                 Request.Builder()
-                    .url(getUrl(responseCode.toString(), delay.toString()))
+                    .url(url)
                     .build()
             }
             HttpMethod.POST -> {
                 Request.Builder()
-                    .url(getUrl(responseCode.toString(), delay.toString()))
+                    .url(url)
                     .addHeader("Accept", "application/json")
                     .addHeader("Content-Type", "text/plain")
                     .post("{key1:\"value1\"}".toRequestBody("text/x-markdown; charset=utf-8".toMediaType()))
