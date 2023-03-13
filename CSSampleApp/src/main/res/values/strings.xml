@@ -15,6 +15,8 @@
     <string name="label_library_title">Library :</string>
     <string name="label_response_title">Response code :</string>
     <string name="label_delay_title">Delay (ms)</string>
+    <string name="label_add_email">Add email in url</string>
+    <string name="label_add_extra_path">Add extra path</string>
     <string name="label_send_button">Send</string>
     <string name="label_timeout_button">Timeout</string>
     <string name="label_dynamic_variables">Dynamic Variables</string>
