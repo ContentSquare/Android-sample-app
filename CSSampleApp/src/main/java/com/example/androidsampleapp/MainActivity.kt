@@ -10,6 +10,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.contentsquare.android.api.Currencies
+import com.example.androidsampleapp.crash.ErrorAnalysisCrashActivity
 import com.example.androidsampleapp.analytics.Analytics
 import com.example.androidsampleapp.databinding.ActivityMainBinding
 import com.example.androidsampleapp.fragment.MainFragmentActivity
@@ -44,6 +45,10 @@ class MainActivity : AppCompatActivity() {
 
     fun openNetworkAnalysis(view: View) {
         startActivity(Intent(this, NetworkAnalysisActivity::class.java))
+    }
+
+    fun openCrashActivity(view: View) {
+        startActivity(Intent(this, ErrorAnalysisCrashActivity::class.java))
     }
 
     fun openDynamicVariables(view: View) {

@@ -11,6 +11,7 @@
     <string name="label_popup">Popup</string>
     <string name="label_privacy">Privacy Options</string>
     <string name="label_network_analysis">Network Analysis</string>
+    <string name="label_crash">Crashes</string>
     <string name="label_http_title">HTTP Method :</string>
     <string name="label_library_title">Library :</string>
     <string name="label_response_title">Response code :</string>
@@ -63,5 +64,22 @@
     <string name="label_blue_image_view">Blue ImageView</string>
     <string name="text_one_line_text_view">One line TextView</string>
     <string name="text_multiple_line_text_view">Multiple line TextView. Multiple line TextView. Multiple line TextView. Multiple line TextView. Multiple line TextView. Multiple line TextView. </string>
+
+    <string name="activity_crash_title">Crashes</string>
+    <string name="activity_crash_null_pointer_exception">Null pointer exception</string>
+    <string name="activity_crash_uninitialised">Uninitialised exception</string>
+    <string name="activity_crash_causes">Multiple causes exception</string>
+    <string name="activity_crash_too_many_causes">Too many causes exception</string>
+    <string name="activity_crash_stack_overflow">Stackoverflow exception</string>
+    <string name="activity_crash_out_of_memory">Out of memory exception</string>
+    <string name="activity_crash_coroutines_io">NPE in Coroutine IO Dispatcher</string>
+    <string name="activity_crash_coroutines_main">NPE in Coroutine Main Dispatcher</string>
+    <string name="activity_crash_service">NPE in Service Creation</string>
+    <string name="activity_crash_delayed">NPE Delayed by 5 seconds</string>
+    <string name="activity_crash_next_start">NPE On next application start</string>
+    <string name="activity_crash_foreground">NPE On next foreground</string>
+    <string name="activity_crash_foreground_with_delay">NPE On next foreground delayed 5s</string>
+    <string name="activity_crash_type">Crash Type:</string>
+    <string name="activity_crash_perform_crash">Perform Crash</string>
 
 </resources>

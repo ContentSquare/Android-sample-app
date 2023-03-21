@@ -143,12 +143,21 @@
             android:id="@+id/label_network_analysis"
             style="@style/ListText"
             android:layout_marginStart="32dp"
-            android:layout_marginBottom="24dp"
             android:onClick="openNetworkAnalysis"
             android:text="@string/label_network_analysis"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/title_error_analysis" />
+
+        <TextView
+            android:id="@+id/label_crash"
+            style="@style/ListText"
+            android:layout_marginStart="32dp"
+            android:layout_marginBottom="24dp"
+            android:onClick="openCrashActivity"
+            android:text="@string/label_crash"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_network_analysis" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

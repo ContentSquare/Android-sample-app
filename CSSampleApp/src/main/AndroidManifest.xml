@@ -15,11 +15,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidSampleApp"
         android:usesCleartextTraffic="true"
+        android:name=".SampleApplication"
         tools:ignore="GoogleAppIndexingWarning">
         <uses-library
             android:name="org.apache.http.legacy"
             android:required="false" />
 
+        <activity android:name=".crash.ErrorAnalysisCrashActivity" />
         <activity android:name=".DynamicVariablesActivity" />
         <activity android:name=".MaskingScenariosActivity" />
         <activity android:name=".GdprActivity" />
