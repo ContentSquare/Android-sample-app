@@ -81,5 +81,7 @@
     <string name="activity_crash_foreground_with_delay">NPE On next foreground delayed 5s</string>
     <string name="activity_crash_type">Crash Type:</string>
     <string name="activity_crash_perform_crash">Perform Crash</string>
+    <string name="activity_crash_mapping_id_not_available">Not available. Did you apply the plugin?</string>
+    <string name="activity_crash_mapping_id">Mapping ID: %1s</string>
 
 </resources>
