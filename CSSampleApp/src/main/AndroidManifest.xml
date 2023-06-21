@@ -38,6 +38,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".network.NetworkAnalysisActivity" />
+        <activity android:name=".useridentifier.UserIdentifierActivity" />
     </application>
 
 </manifest>

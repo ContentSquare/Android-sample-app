@@ -15,6 +15,7 @@ import com.example.androidsampleapp.analytics.Analytics
 import com.example.androidsampleapp.databinding.ActivityMainBinding
 import com.example.androidsampleapp.fragment.MainFragmentActivity
 import com.example.androidsampleapp.network.NetworkAnalysisActivity
+import com.example.androidsampleapp.useridentifier.UserIdentifierActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -49,6 +50,10 @@ class MainActivity : AppCompatActivity() {
 
     fun openCrashActivity(view: View) {
         startActivity(Intent(this, ErrorAnalysisCrashActivity::class.java))
+    }
+
+    fun openUserIdentifier(view: View) {
+        startActivity(Intent(this, UserIdentifierActivity::class.java))
     }
 
     fun openDynamicVariables(view: View) {
