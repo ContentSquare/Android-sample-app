@@ -56,6 +56,10 @@ class MainActivity : AppCompatActivity() {
         startActivity(Intent(this, UserIdentifierActivity::class.java))
     }
 
+    fun openCustomVariables(view: View) {
+        startActivity(Intent(this, CustomVariablesActivity::class.java))
+    }
+
     fun openDynamicVariables(view: View) {
         startActivity(Intent(this, DynamicVariablesActivity::class.java))
     }

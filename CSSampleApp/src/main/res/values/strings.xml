@@ -22,6 +22,7 @@
     <string name="label_add_extra_path">Add extra path</string>
     <string name="label_send_button">Send</string>
     <string name="label_timeout_button">Timeout</string>
+    <string name="label_custom_variables">Custom Variables</string>
     <string name="label_dynamic_variables">Dynamic Variables</string>
     <string name="label_behaviour_hint"><![CDATA[Response code >= 300 will be capture as an error]]></string>
     <string name="first_fragment">First Fragment</string>
@@ -37,6 +38,8 @@
     <string name="userId_refreshed">UserId refreshed</string>
     <string name="refresh_button">Refresh</string>
     <string name="user_id_text">"Your userId is -"</string>
+    <!-- CustomVariablesActivity -->
+    <string name="cvars_text">This class showcases how to use custom variables to gather additional data about the screen, the user or the session, sent within a screenview. Please refer to the logs to check the variables being sent.</string>
     <!-- DynamicVariablesActivity -->
     <string name="label_send_numeric_value">Send numeric value</string>
     <string name="text_key">text key</string>
