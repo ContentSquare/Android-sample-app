@@ -94,7 +94,7 @@
             app:layout_constraintTop_toBottomOf="@+id/title_session_replay" />
 
         <TextView
-            android:id="@+id/title_dynamic_variables"
+            android:id="@+id/title_variables"
             style="@style/TitleText"
             android:layout_marginStart="32dp"
             android:layout_marginTop="24dp"
@@ -109,7 +109,7 @@
             android:onClick="openCustomVariables"
             android:text="@string/label_custom_variables"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/title_dynamic_variables" />
+            app:layout_constraintTop_toBottomOf="@+id/title_variables" />
 
         <TextView
             android:id="@+id/label_dynamic_variables"
