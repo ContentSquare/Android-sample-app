@@ -1,8 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
-    id 'com.contentsquare.error.analysis.network' version '1.1.0'
-    id 'com.contentsquare.error.analysis.crash' version '1.2.0'
+    id 'com.contentsquare.error.analysis.network'
+    id 'com.contentsquare.error.analysis.crash'
 }
 
 android {
