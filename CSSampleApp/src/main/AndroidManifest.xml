@@ -22,6 +22,7 @@
             android:required="false" />
 
         <activity android:name=".crash.ErrorAnalysisCrashActivity" />
+        <activity android:name=".CustomVariablesActivity" />
         <activity android:name=".DynamicVariablesActivity" />
         <activity android:name=".MaskingScenariosActivity" />
         <activity android:name=".GdprActivity" />
