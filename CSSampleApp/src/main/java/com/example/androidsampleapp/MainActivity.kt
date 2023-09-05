@@ -111,6 +111,10 @@ class MainActivity : AppCompatActivity() {
         Analytics.tagScreen("ActivityDialog_DialogShow")
     }
 
+    fun openCompose(view: View) {
+        startActivity(Intent(this, ComposeSimpleActivity::class.java))
+    }
+
     fun pushTransaction(view: View) {
         val amount = 244.33f
         val currency = Currencies.EUR
