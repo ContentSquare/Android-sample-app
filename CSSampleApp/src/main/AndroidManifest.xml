@@ -28,6 +28,7 @@
         <activity android:name=".GdprActivity" />
         <activity android:name=".fragment.MainFragmentActivity" />
         <activity android:name=".SimpleActivity" />
+        <activity android:name=".ComposeSimpleActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="true"

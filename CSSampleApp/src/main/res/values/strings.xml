@@ -10,6 +10,7 @@
     <string name="label_activity">Activity</string>
     <string name="label_fragment">Fragment</string>
     <string name="label_popup">Popup</string>
+    <string name="label_compose">Compose Activity</string>
     <string name="label_privacy">Privacy Options</string>
     <string name="label_network_analysis">Network Analysis</string>
     <string name="label_user_identifier">User Identifier</string>
@@ -69,6 +70,7 @@
     <string name="label_blue_image_view">Blue ImageView</string>
     <string name="text_one_line_text_view">One line TextView</string>
     <string name="text_multiple_line_text_view">Multiple line TextView. Multiple line TextView. Multiple line TextView. Multiple line TextView. Multiple line TextView. Multiple line TextView. </string>
+    <string name="text_simple_compose_activity">Simple Compose Activity</string>
 
     <string name="activity_crash_title">Crashes</string>
     <string name="activity_crash_null_pointer_exception">Null pointer exception</string>
