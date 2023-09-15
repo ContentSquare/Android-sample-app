@@ -25,7 +25,7 @@
     <string name="label_timeout_button">Timeout</string>
     <string name="label_custom_variables">Custom Variables</string>
     <string name="label_dynamic_variables">Dynamic Variables</string>
-    <string name="label_behaviour_hint"><![CDATA[Response code >= 300 will be capture as an error]]></string>
+    <string name="label_behaviour_hint"><![CDATA[Response code >= 400 will be capture as an error]]></string>
     <string name="first_fragment">First Fragment</string>
     <string name="second_fragment">Second Fragment</string>
     <string name="third_fragment">Third Fragment</string>
