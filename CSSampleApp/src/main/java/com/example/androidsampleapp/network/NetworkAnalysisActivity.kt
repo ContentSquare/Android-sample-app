@@ -16,7 +16,7 @@ class NetworkAnalysisActivity : AppCompatActivity() {
     private lateinit var delayAdapter: ArrayAdapter<Delay>
 
     companion object {
-        const val URL = "https://httpstat.us"
+        const val URL = "https://httpstatus-dev.eu-west-1.csq.fr"
         const val EXTRA_PATH = "person/123/store/456"
         const val EXTRA_EMAIL = "test@cs.com"
         const val URL_MASK = "$URL/:status_code/person/:person_id/store/:store_id"
