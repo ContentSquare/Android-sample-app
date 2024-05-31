@@ -192,9 +192,19 @@
             android:layout_marginBottom="24dp"
             android:onClick="openUserIdentifier"
             android:text="@string/label_user_identifier"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/title_public_api" />
+
+        <TextView
+            android:id="@+id/label_third_party"
+            style="@style/ListText"
+            android:layout_marginStart="32dp"
+            android:layout_marginBottom="24dp"
+            android:onClick="openThirdParty"
+            android:text="@string/label_third_party"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_user_identifier" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

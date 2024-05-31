@@ -14,6 +14,13 @@
     <string name="label_privacy">Privacy Options</string>
     <string name="label_network_analysis">Network Analysis</string>
     <string name="label_user_identifier">User Identifier</string>
+    <string name="label_third_party">Third Party</string>
+    <string name="label_launch_darkly">Launch Darkly</string>
+    <string name="label_setup_launch_darkly">Please provide your Launch Darkly mobile key inside LaunchDarklyActivity</string>
+    <string name="label_launch_darkly_init_client">Initialise client</string>
+    <string name="label_launch_darkly_retrieve_and_listen">Retrieve FF and listen for changes</string>
+    <string name="label_launch_darkly_ff_hint">Feature flag name</string>
+    <string name="label_launch_darkly_init_client_failed">Initialise client failed. Try again?</string>
     <string name="label_crash">Crashes</string>
     <string name="label_http_title">HTTP Method :</string>
     <string name="label_library_title">Library :</string>
