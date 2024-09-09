@@ -4,13 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MaskingScenariosActivity"
     tools:ignore="UsingOnClickInXml, ContentDescription">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:context=".SimpleActivity">
+        android:background="@color/content_bg">
 
         <TextView
             android:id="@+id/set_default_masking_title"
@@ -114,7 +116,7 @@
             android:layout_marginStart="32dp"
             android:layout_marginTop="16dp"
             android:onClick="onUnmaskAllImageView"
-            android:text="@string/text_un_mask_all_text_view"
+            android:text="@string/text_un_mask_all_image_view"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/mask_all_image_view" />
 
@@ -189,4 +191,5 @@
             app:layout_constraintTop_toBottomOf="@id/blue_image_view" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </ScrollView>

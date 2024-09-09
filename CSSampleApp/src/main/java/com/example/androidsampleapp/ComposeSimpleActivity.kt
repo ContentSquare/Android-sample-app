@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
@@ -36,6 +37,7 @@ fun SimpleScreen() {
     TriggeredOnResume { Contentsquare.send("Simple-Compose-Activity") }
 
     Scaffold (
+        modifier = Modifier.safeDrawingPadding(),
         topBar = { TopAppBar(
             title = {
                 Text(text = stringResource(R.string.app_name))
