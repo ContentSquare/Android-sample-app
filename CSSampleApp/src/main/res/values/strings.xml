@@ -90,5 +90,7 @@
     <string name="activity_crash_perform_crash">Perform Crash</string>
     <string name="activity_crash_mapping_id_not_available">Not available. Did you apply the plugin?</string>
     <string name="activity_crash_mapping_id">Mapping ID: %1s</string>
-
+    <!-- UserIdentifierActivity -->
+    <string name="user_identifier">User Identifier</string>
+    <string name="send_user_identifier">Send User Identifier</string>
 </resources>

@@ -1,54 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/content_bg">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintlayout"
+        android:id="@+id/constraintlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        android:paddingBottom="108dp"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="108dp"
+            android:layout_marginBottom="24dp"
+            android:text="@string/privacy_option"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            app:layout_constraintBottom_toTopOf="@+id/userid_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/userid_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="24dp"
-            android:paddingBottom="108dp"
-            android:gravity="center">
-
-        <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="108dp"
-                android:layout_marginBottom="24dp"
-                android:text="@string/privacy_option"
-                android:textAppearance="@style/TextAppearance.AppCompat.Title"
-                app:layout_constraintBottom_toTopOf="@+id/userid_text"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-                android:id="@+id/userid_text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:text="@string/user_id_text"
-                app:layout_constraintBottom_toTopOf="@+id/userid_refresh_button"
-                app:layout_constraintEnd_toEndOf="@+id/textView"
-                app:layout_constraintStart_toStartOf="@+id/textView"
-                app:layout_constraintTop_toBottomOf="@+id/textView" />
+            android:layout_marginBottom="16dp"
+            android:text="@string/user_id_text"
+            app:layout_constraintBottom_toTopOf="@+id/userid_refresh_button"
+            app:layout_constraintEnd_toEndOf="@+id/textView"
+            app:layout_constraintStart_toStartOf="@+id/textView"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
 
         <ImageButton
-                android:id="@+id/userid_refresh_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:contentDescription="@string/refresh_button"
-                android:layout_marginTop="24dp"
-                android:onClick="refreshUserIdString"
-                app:layout_constraintEnd_toEndOf="@+id/userid_text"
-                app:layout_constraintStart_toStartOf="@+id/userid_text"
-                app:layout_constraintTop_toBottomOf="@+id/userid_text"
-                app:srcCompat="@android:drawable/stat_notify_sync"
-                tools:layout_editor_absoluteY="194dp" />
+            android:id="@+id/userid_refresh_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/refresh_button"
+            android:layout_marginTop="24dp"
+            android:onClick="refreshUserIdString"
+            app:layout_constraintEnd_toEndOf="@+id/userid_text"
+            app:layout_constraintStart_toStartOf="@+id/userid_text"
+            app:layout_constraintTop_toBottomOf="@+id/userid_text"
+            app:srcCompat="@android:drawable/stat_notify_sync"
+            tools:layout_editor_absoluteY="194dp" />
 
 
         <Button
@@ -114,17 +115,16 @@
             app:layout_constraintTop_toBottomOf="@+id/forgetme_button" />
 
         <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintGuide_percent="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintGuide_percent="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>
-

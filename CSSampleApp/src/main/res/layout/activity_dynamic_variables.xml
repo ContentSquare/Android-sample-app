@@ -1,124 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     tools:context=".DynamicVariablesActivity">
 
-    <EditText
-        android:id="@+id/textKey"
-        android:layout_width="64dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:hint="@string/text_key"
-        android:importantForAutofill="no"
-        android:inputType="text"
-        android:text="@string/key"
-        app:layout_constraintBottom_toTopOf="@+id/NumericTitle"
-        app:layout_constraintEnd_toStartOf="@+id/textValue"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TextTitle"
-        app:layout_constraintVertical_chainStyle="packed" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/content_bg">
 
-    <EditText
-        android:id="@+id/textValue"
-        android:layout_width="64dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:hint="@string/text_value"
-        android:importantForAutofill="no"
-        android:inputType="text"
-        android:text="@string/value"
-        app:layout_constraintEnd_toStartOf="@+id/sendText"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toEndOf="@+id/textKey"
-        app:layout_constraintTop_toTopOf="@+id/textKey" />
+        <EditText
+            android:id="@+id/textKey"
+            android:layout_width="64dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="@string/text_key"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:text="@string/key"
+            app:layout_constraintBottom_toTopOf="@+id/NumericTitle"
+            app:layout_constraintEnd_toStartOf="@+id/textValue"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/TextTitle"
+            app:layout_constraintVertical_chainStyle="packed" />
 
-    <Button
-        android:id="@+id/sendText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="onSendText"
-        android:text="@string/send"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toEndOf="@+id/textValue"
-        app:layout_constraintTop_toTopOf="@+id/textValue" />
+        <EditText
+            android:id="@+id/textValue"
+            android:layout_width="64dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:hint="@string/text_value"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:text="@string/value"
+            app:layout_constraintEnd_toStartOf="@+id/sendText"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toEndOf="@+id/textKey"
+            app:layout_constraintTop_toTopOf="@+id/textKey" />
 
-    <TextView
-        android:id="@+id/TextTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/label_send_text_value"
-        app:layout_constraintBottom_toTopOf="@+id/textKey"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="packed" />
+        <Button
+            android:id="@+id/sendText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onSendText"
+            android:text="@string/send"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toEndOf="@+id/textValue"
+            app:layout_constraintTop_toTopOf="@+id/textValue" />
 
-    <TextView
-        android:id="@+id/NumericTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="@string/label_send_numeric_value"
-        app:layout_constraintBottom_toTopOf="@+id/numericKey"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textKey"
-        app:layout_constraintVertical_chainStyle="packed" />
+        <TextView
+            android:id="@+id/TextTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_send_text_value"
+            app:layout_constraintBottom_toTopOf="@+id/textKey"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
 
-    <EditText
-        android:id="@+id/numericKey"
-        android:layout_width="64dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:hint="@string/numeric_key"
-        android:importantForAutofill="no"
-        android:inputType="text"
-        android:text="@string/key"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/numericValue"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/NumericTitle"
-        app:layout_constraintVertical_chainStyle="packed" />
+        <TextView
+            android:id="@+id/NumericTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/label_send_numeric_value"
+            app:layout_constraintBottom_toTopOf="@+id/numericKey"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textKey"
+            app:layout_constraintVertical_chainStyle="packed" />
 
-    <EditText
-        android:id="@+id/numericValue"
-        android:layout_width="64dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:hint="@string/numeric_value"
-        android:importantForAutofill="no"
-        android:inputType="number"
-        android:text="@string/numeric_default_value"
-        app:layout_constraintEnd_toStartOf="@+id/sendNumeric"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toEndOf="@+id/numericKey"
-        app:layout_constraintTop_toTopOf="@+id/numericKey" />
+        <EditText
+            android:id="@+id/numericKey"
+            android:layout_width="64dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="@string/numeric_key"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:text="@string/key"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/numericValue"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/NumericTitle"
+            app:layout_constraintVertical_chainStyle="packed" />
 
-    <Button
-        android:id="@+id/sendNumeric"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="onSendNumber"
-        android:text="@string/send"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toEndOf="@+id/numericValue"
-        app:layout_constraintTop_toTopOf="@+id/numericValue" />
+        <EditText
+            android:id="@+id/numericValue"
+            android:layout_width="64dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:hint="@string/numeric_value"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:text="@string/numeric_default_value"
+            app:layout_constraintEnd_toStartOf="@+id/sendNumeric"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toEndOf="@+id/numericKey"
+            app:layout_constraintTop_toTopOf="@+id/numericKey" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/sendNumeric"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onSendNumber"
+            android:text="@string/send"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toEndOf="@+id/numericValue"
+            app:layout_constraintTop_toTopOf="@+id/numericValue" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
