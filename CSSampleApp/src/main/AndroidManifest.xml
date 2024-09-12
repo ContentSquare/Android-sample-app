@@ -40,6 +40,11 @@
         </activity>
         <activity android:name=".network.NetworkAnalysisActivity" />
         <activity android:name=".useridentifier.UserIdentifierActivity" />
+
+        <meta-data
+            android:name="com.contentsquare.android.autostart"
+            android:value="false" />
+
     </application>
 
 </manifest>

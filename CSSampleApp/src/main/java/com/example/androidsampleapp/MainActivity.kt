@@ -9,7 +9,9 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import com.contentsquare.android.Contentsquare
 import com.contentsquare.android.api.Currencies
+import com.contentsquare.android.experimental.ContentsquareExperimental
 import com.example.androidsampleapp.crash.ErrorAnalysisCrashActivity
 import com.example.androidsampleapp.analytics.Analytics
 import com.example.androidsampleapp.databinding.ActivityMainBinding
@@ -23,6 +25,10 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        ContentsquareExperimental.setHttpRequestHandler(HttpRequestHandlerImplCustomer())
+        Contentsquare.start(applicationContext)
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
     }
