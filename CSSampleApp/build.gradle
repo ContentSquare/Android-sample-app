@@ -8,7 +8,7 @@ plugins {
 
 android {
     compileSdk 35
-
+    def csProjectId = 5671
     defaultConfig {
         applicationId "com.example.androidsampleapp"
         minSdk 21
@@ -25,12 +25,26 @@ android {
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            errorAnalysisCrash {
+                uploadCredentials {
+                    projectId = csProjectId
+                    clientId = System.getenv("PROD_MAPPING_UPLOAD_CLIENT_ID") ?: ""
+                    clientSecret = System.getenv("PROD_MAPPING_UPLOAD_CLIENT_SECRET") ?: ""
+                }
+            }
         }
 
         minify {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.debug
+            errorAnalysisCrash {
+                uploadCredentials {
+                    projectId = csProjectId
+                    clientId = System.getenv("PROD_MAPPING_UPLOAD_CLIENT_ID") ?: ""
+                    clientSecret = System.getenv("PROD_MAPPING_UPLOAD_CLIENT_SECRET") ?: ""
+                }
+            }
         }
     }
 
