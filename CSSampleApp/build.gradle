@@ -30,7 +30,7 @@ android {
                 uploadCredentials {
                     // from gradle.properties
                     projectId = project.findProperty("PROD_SAMPLE_PROJECT_ID")?.toInteger() ?:
-                            System.getenv("PROD_SAMPLE_PROJECT_ID")
+                            System.getenv("PROD_SAMPLE_PROJECT_ID")?.toInteger()
                     // from local.properties
                     clientId = localProperties.getProperty("PROD_MAPPING_UPLOAD_CLIENT_ID", "") ?:
                             System.getenv("PROD_MAPPING_UPLOAD_CLIENT_ID")
