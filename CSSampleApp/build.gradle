@@ -25,25 +25,16 @@ android {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             // Set credentials from different source, fallback on Github CI --> see android-ci.yml
-//            def localProperties = getLocalProperties()
-            // from gradle.properties
-            def projectIdFromGradleFile = project.findProperty("PROD_SAMPLE_PROJECT_ID")?.toInteger() ?:
-                    System.getenv("PROD_SAMPLE_PROJECT_ID")?.toInteger()
-            // from local.properties
-            def clientIdFromLocal = getLocalProperty("PROD_MAPPING_UPLOAD_CLIENT_ID") ?: System.getenv("PROD_MAPPING_UPLOAD_CLIENT_ID")
-//            if (localProperties != null) localProperties.getProperty("PROD_MAPPING_UPLOAD_CLIENT_ID", "") else
-//                System.getenv("PROD_MAPPING_UPLOAD_CLIENT_ID")
-            // from environment variable, is the same than Github CI here
-            def clientSecretFromEnv = System.getenv("PROD_MAPPING_UPLOAD_CLIENT_SECRET") ?: ""
-            println("project id = ${projectIdFromGradleFile} client id = ${clientIdFromLocal} client secret = ${clientSecretFromEnv}")
             errorAnalysisCrash {
                 uploadCredentials {
                     // from gradle.properties
-                    projectId = projectIdFromGradleFile
+                    projectId = project.findProperty("PROD_SAMPLE_PROJECT_ID")?.toInteger() ?:
+                            System.getenv("PROD_SAMPLE_PROJECT_ID")?.toInteger()
                     // from local.properties
-                    clientId = clientIdFromLocal
+                    clientId = getLocalProperty("PROD_MAPPING_UPLOAD_CLIENT_ID") ?:
+                            System.getenv("PROD_MAPPING_UPLOAD_CLIENT_ID")
                     // from environment variable, is the same than Github CI here
-                    clientSecret = clientSecretFromEnv
+                    clientSecret = System.getenv("PROD_MAPPING_UPLOAD_CLIENT_SECRET") ?: ""
                 }
             }
         }
