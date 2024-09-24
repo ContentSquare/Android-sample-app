@@ -41,9 +41,6 @@ jobs:
       - name: Build with Gradle
         run: ./gradlew build
         env:
+          PROD_SAMPLE_PROJECT_ID: ${{ secrets.PROD_SAMPLE_PROJECT_ID }}
           PROD_MAPPING_UPLOAD_CLIENT_ID: ${{ secrets.PROD_MAPPING_UPLOAD_CLIENT_ID }}
           PROD_MAPPING_UPLOAD_CLIENT_SECRET: ${{ secrets.PROD_MAPPING_UPLOAD_CLIENT_SECRET }}
-
-      # Optional Step: Run your tests
-      - name: Run tests
-        run: ./gradlew test
