@@ -28,13 +28,13 @@ android {
             errorAnalysisCrash {
                 uploadCredentials {
                     // from gradle.properties
-                    projectId = project.findProperty("PROD_SAMPLE_PROJECT_ID")?.toInteger() ?:
-                            System.getenv("PROD_SAMPLE_PROJECT_ID")?.toInteger()
+                    projectId = project.findProperty("SAMPLE_PROJECT_ID")?.toInteger() ?:
+                            System.getenv("SAMPLE_PROJECT_ID")?.toInteger()
                     // from local.properties
-                    clientId = getLocalProperty("PROD_MAPPING_UPLOAD_CLIENT_ID") ?:
-                            System.getenv("PROD_MAPPING_UPLOAD_CLIENT_ID")
+                    clientId = getLocalProperty("SAMPLE_MAPPING_UPLOAD_CLIENT_ID") ?:
+                            System.getenv("SAMPLE_MAPPING_UPLOAD_CLIENT_ID")
                     // from environment variable, is the same than Github CI here
-                    clientSecret = System.getenv("PROD_MAPPING_UPLOAD_CLIENT_SECRET") ?: ""
+                    clientSecret = System.getenv("SAMPLE_MAPPING_UPLOAD_CLIENT_SECRET") ?: ""
                 }
             }
         }
