@@ -8,7 +8,6 @@ plugins {
 
 android {
     compileSdk 35
-
     defaultConfig {
         applicationId "com.example.androidsampleapp"
         minSdk 21
@@ -25,12 +24,19 @@ android {
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-
-        minify {
-            minifyEnabled true
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.debug
+            // Set credentials from different source, fallback on Github CI --> see android-ci.yml
+            errorAnalysisCrash {
+                uploadCredentials {
+                    // from gradle.properties
+                    projectId = project.findProperty("SAMPLE_PROJECT_ID")?.toInteger() ?:
+                            System.getenv("SAMPLE_PROJECT_ID")?.toInteger()
+                    // from local.properties
+                    clientId = getLocalProperty("SAMPLE_MAPPING_UPLOAD_CLIENT_ID") ?:
+                            System.getenv("SAMPLE_MAPPING_UPLOAD_CLIENT_ID")
+                    // from environment variable, is the same than Github CI here
+                    clientSecret = System.getenv("SAMPLE_MAPPING_UPLOAD_CLIENT_SECRET") ?: ""
+                }
+            }
         }
     }
 
@@ -83,4 +89,14 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.2.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
+}
+
+def getLocalProperty(clientIdProp) {
+    def localProperties = new Properties()
+    def localPropertiesFile = rootProject.file("local.properties")
+    if (localPropertiesFile.exists()) {
+        localProperties.load(new FileInputStream(localPropertiesFile))
+        return localProperties.getProperty(clientIdProp)
+    }
+    return null
 }
