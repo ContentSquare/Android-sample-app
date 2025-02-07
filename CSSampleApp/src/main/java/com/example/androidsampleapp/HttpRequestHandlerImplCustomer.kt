@@ -4,7 +4,6 @@ package com.example.androidsampleapp
 import com.contentsquare.android.core.features.http.HttpRequestHandler
 import com.contentsquare.android.core.features.http.HttpResponse
 import com.contentsquare.android.core.features.http.RequestOptions
-import okhttp3.MediaType
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import okhttp3.Request
@@ -54,7 +53,7 @@ class HttpRequestHandlerImplCustomer : HttpRequestHandler {
                 .readTimeout(options.timeoutRead.toLong(), TimeUnit.MILLISECONDS)
                 .build()
             val request = Request.Builder().url(options.endpoint)
-                .post(data.toRequestBody(options.mediaType()))
+                .post(data.toRequestBody(options.headers["Content-Type"]?.toMediaType()))
             for (header in options.headers) {
                 request.addHeader(header.key, header.value)
             }
@@ -77,11 +76,5 @@ class HttpRequestHandlerImplCustomer : HttpRequestHandler {
         }
 
         return csResponse
-    }
-
-    private fun RequestOptions.mediaType(): MediaType {
-        return this.headers["Content-Type"]?.toMediaType()
-            ?: "application/json; charset=${Charsets.UTF_8.name()}".toMediaType()
-
     }
 }
